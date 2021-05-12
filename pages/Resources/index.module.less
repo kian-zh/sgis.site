@@ -1,0 +1,60 @@
+.container{
+    height: 70vh;
+    width: auto;
+    padding-top: 20vh;
+    padding-right: 15vh;
+    padding-left: 15vh;
+    padding-bottom: 10vh;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.card{
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    border: solid 1px azure;
+    border-radius: 20px;
+    width: 50vh;
+    height: 26vh;
+    margin: 20px;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    font-size: 3vh;
+    display: flex;
+    cursor: pointer;
+    transition: all ease-out 0.3s;
+}
+.card:hover{
+    transform:translateY(-10px);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4));
+}
+.nocolorCard{
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    border-radius: 20px;
+    flex-direction: column;
+    border: solid 1px azure;
+    opacity: 0.6;
+    font-size: 3vh;
+    width: 50vh;
+    height: 26vh;
+    margin: 20px;
+    justify-content:center;
+    align-items:center;
+    display: flex;
+    cursor: pointer;
+}
+.title{
+    position: absolute;
+    left: 18vh;
+    top: 5vh;
+    font-size: 5vh;
+}
+.background{
+    background-color: #e5ecc6;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    background: linear-gradient(90deg, #8380a1, #bb8db5);
+    color: #ffffff;
+}

@@ -1,0 +1,136 @@
+.page1{
+    text-align: center;
+    height: auto;
+    padding-bottom: 10vh;
+    min-height: 70vh;
+    padding-top: 20vh;
+    color: #ffffff;
+    /*background-color: rgb(65, 121, 121);*/
+    background: linear-gradient(50deg, #40425c, #284e61 66.6%, #416485);
+  }
+  .page2{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    height: auto;
+    min-height: 100vh;
+    text-align: center;
+    background-color: #325468;
+    display: block;
+  }
+  .page3{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    height: auto;
+    min-height: 80vh;
+    text-align: center;
+    background: linear-gradient(50deg, #465c2e, #7d8143 66.6%, #80702a);
+  }
+  .page4{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    height: auto;
+    min-height: 80vh;
+    text-align: center;
+    background: linear-gradient(50deg, #1a2e4b, #454779 66.6%, #573f72);
+  }
+  .page5{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    height: auto;
+    min-height: 80vh;
+    text-align: center;
+    background: linear-gradient(50deg, #16443a, #32693a 66.6%, #3f8119);
+  }
+  .imgToClick{
+    border: solid #ffffff 4px;
+    border-radius: 60px;
+    height: 9vh;
+    margin: 10px;
+    padding: 20px;
+    transition: all 0.1s;
+    cursor: pointer;
+  }
+  .imgToClick:hover{
+    box-shadow: 0 0 10px 5px #ffffff;
+  }
+  .myPic{
+    height: 25vh;
+  }
+  .page3Content{
+    text-align: left;
+    padding: 40px;
+    max-width: 1000px;
+    width: auto;
+    margin:0 auto;
+    border: solid 4px #d9d9d9;
+    color: #d9d9d9;
+  }
+  .page4Content{
+    text-align: left;
+    padding: 40px;
+    max-width: 1000px;
+    line-height: 180%;
+    width: auto;
+    margin:0 auto;
+    color: #d9d9d9;
+  }
+  .mapContainer{
+    height: 100vh;
+    width:100%;
+    position: absolute;
+  }
+  .mapCover{
+    position: absolute;
+    margin-top: 50vh;
+    height: 40vh;
+    padding-top: 5vh;
+    font-weight: 600;
+    width:30vh;
+    right: 5vh;
+    z-index: 1;
+    font-size:3vh;
+    color:#854d88;
+    background-color: rgba(200,200,200,0.8);
+    line-height: 200%;
+  }
+  .itemToClick{
+    color:#854d88;
+    cursor: pointer;
+    padding: 1vh;
+    text-decoration:underline;
+  }
+  .itemToClick:hover{
+    color: #fff;
+    background-color: #854d88;
+  }
+  .mpaCoverTitle{
+    font-size: 4vh;
+  }
+  .popup{
+    font-size: 3vh;
+    line-height: 140%;
+  }
+  .popup > .mapboxgl-popup-content{
+    background-color: rgba(200,200,200,0.8);
+  }
+  .popup > .mapboxgl-popup-tip{
+    border-top-color: rgba(200,200,200,0.8);
+  }
+
+  .footer{
+    padding-top: 40px;
+    padding-bottom: 60px;
+    color: rgb(146, 146, 146);
+    background-color: black;
+    text-align: left;
+    font-size: 2vh;
+  }
+  .footerContent{
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+  }
+  .footerContentPart{
+    width: 50%;
+  }

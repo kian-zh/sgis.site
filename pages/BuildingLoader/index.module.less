@@ -1,0 +1,61 @@
+.banner{
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    background-color:rgb(19, 54, 54);
+    text-align: center;
+}
+.title{
+    color: rgb(231, 231, 231);
+    font-size: 3vh;
+    margin-top: 2vh;
+}
+.toolWindow{
+    position: absolute;
+    top:20%;
+    width:30%;
+    right:5%;
+    height:70%;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 3%;
+    text-align: center;
+}
+.listContainer{
+    top:100px;
+    left:10%;
+    right: 10%;
+    bottom: 10%;
+    position: absolute;
+    overflow-y: scroll;
+    //border: solid 1px #adadad;
+    border-radius: 2px;
+}
+
+/* 美化滚动条样式 */
+
+/*整体部分*/ 
+::-webkit-scrollbar
+{
+	width: 5px;
+	height: 5px;
+}
+/*滑动轨道*/ 
+::-webkit-scrollbar-track
+{
+	border-radius: 2px;
+	background: none;
+}
+/*滑块*/
+::-webkit-scrollbar-thumb
+{
+	border-radius: 2px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+	background-color: rgba(124, 124, 124, 0.75)
+}
+/*滑块效果*/ 
+::-webkit-scrollbar-thumb:hover
+{
+	border-radius: 2px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+	background-color: rgba(153, 153, 153, 0.4);
+}

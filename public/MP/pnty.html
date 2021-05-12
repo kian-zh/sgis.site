@@ -1,0 +1,167 @@
+<html>
+<meta charset="utf-8">
+<head>
+    <style>
+        polyline{fill-opacity: 0;stroke:#e37682;stroke-width:1}
+        .land{fill-opacity: 1;fill:#6194A7;stroke:#935d8c;stroke-width:2}
+        .china{fill-opacity: 1;fill:#5f4d93;stroke:#eeeeee;stroke-width:1}
+    </style>
+    <script src="Line.js"></script>
+    <script>
+        pi=3.1415926;
+        a=6378245;
+        b=6356863;
+        e2=0.0066934;
+        function rad(x)
+        {
+            return pi*x/180
+        }
+        function Q1()
+        {
+            alert('运行约1分钟');
+            result="";
+            for(xx=-180;xx<=180;xx=xx+10)
+            {
+                line="";
+                for(yy=-90;yy<90;yy=yy+1)
+                {
+                    line=line+Q1_get_xy(xx,yy)+' ';
+                }
+                result=result+"<polyline points='"+line+"'/>";
+            }
+            for(yy=-90;yy<90;yy=yy+10)
+            {
+                line="";
+                for(xx=-180;xx<=180;xx=xx+6)
+                {
+
+                    line=line+Q1_get_xy(xx,yy)+' ';
+                }
+                result=result+"<polyline points='"+line+"'/>";
+            }
+            length=data().length;
+            Land_line=data();
+            max=length/2;
+            line="<polyline class='land' points='";
+            for(iii=1;iii<=max;iii=iii+1)
+            {
+                yy=Land_line[2*iii-1];
+                xx=Land_line[2*iii-2];
+                if(xx>-500) {
+                    line=line+Q1_get_xy(xx,yy)+' ';
+                }
+                else
+                {
+                    line=line+"'/> <polyline class='land' points='";
+                }
+            }
+            line=line+"'/>";
+            result=result+line;
+            document.getElementById('answer1').innerHTML=result;
+        }
+        function Q1_get_xy(xx,yy)
+        {
+            Phi=rad(yy);
+            Phi0=rad(40);
+            Lambada=rad(xx-0);
+            q=get_N(Phi0)*(1/Math.tan(Phi0))+get_SM(0,Phi0);
+            S=get_SM(0,Phi);
+            Rho=q-S;
+            r=get_N(Phi)*Math.cos(Phi);
+            Delta=(r/Rho)*Lambada;
+            x=q-Rho*Math.cos(Delta);
+            y=Rho*Math.sin(Delta);
+            x=200-x/100000;
+            y=300+y/100000;
+            xy=y.toString()+','+x.toString();
+            return xy;
+        }
+        function get_N(rad)
+        {
+            return (a)/Math.pow((1-e2*Math.sin(rad)*Math.sin(rad)),0.5);
+        }
+        function get_SM(rad_min,rad_max)
+        {
+            gap=(rad_max-rad_min)/1000;
+            SM=0;
+            for(i=rad_min+0.5*gap;Math.abs(i)<Math.abs(rad_max);i=i+gap)
+            {
+                M=(a*(1-e2))/Math.pow((1-e2*Math.sin(i)*Math.sin(i)),1.5);
+                SM=SM+M*gap;
+            }
+            return SM;
+        }
+        function Q2_get_xy(xx,yy)
+        {
+            Phi=rad(yy);
+            Phi0=rad(35);
+            Lambada=rad(xx-105);
+            q=get_N(Phi0)*(1/Math.tan(Phi0))+get_SM(0,Phi0);
+            S=get_SM(0,Phi);
+            Rho=q-S;
+            r=get_N(Phi)*Math.cos(Phi);
+            Delta=(r/Rho)*Lambada;
+            x=q-Rho*Math.cos(Delta);
+            y=Rho*Math.sin(Delta);
+            x=550-x/12000;
+            y=300+y/12000;
+            xy=y.toString()+','+x.toString();
+            return xy;
+        }
+        function Q2()
+        {
+            result='';
+            length=cdata().length;
+            C_line=cdata();
+            max=length/2;
+            line="<polyline class='china' points='";
+            for(iii=1;iii<=max;iii=iii+1)
+            {
+                yy=C_line[2*iii-1];
+                xx=C_line[2*iii-2];
+                if(xx>-500) {
+                    line=line+Q2_get_xy(xx,yy)+' ';
+                }
+                else
+                {
+                    line=line+"'/> <polyline class='china' points='";
+                }
+            }
+            line=line+"'/>";
+            result=result+line;
+            document.getElementById('answer2').innerHTML=result;
+        }
+    </script>
+</head>
+<body>
+<div style="text-align: center;position: absolute;top:0px;left: 0px;right: 0px;height: 200px;background: linear-gradient(50deg, #a89cc8 50%, #C8E0EC 75%, #a89cc8 0%);background-size: 180px 200px;font-size: 40px;">
+    <p style="top:80px;"></p>
+    <p style="top:110px;font-size: 18px;"></p>
+</div>
+<div style="text-align: center;position: absolute;top:240px;left: 0px;right: 0px;height:auto;background-color:#ffffff;font-size: 18px;">
+    <p>
+        <br/>
+        <b>彭纳投影(标准纬线40°)经纬格网，并加绘世界地图</b>
+        <br/>
+        <button onclick="Q1()">Run</button>
+        <br/>
+        <br/>
+        <svg id="answer1" style="width: 600px;height: 400px;border: #c79cc8 solid 2px;left: 50%;"></svg>
+    </p>
+    <p id="answer1"></p>
+    <p>
+        <br/>
+        <b>彭纳投影中国全图（中央经线105°E，标准纬线35°N）</b>
+
+        <br/>
+        <button onclick="Q2()">Run</button>
+        <br/>
+        <br/>
+        <svg id="answer2" style="width: 600px;height: 400px;border: #c79cc8 solid 2px;left: 50%;"></svg>
+    </p>
+    <br/>
+    <br/>
+    <br/>
+</div>
+</body>
+</html>
