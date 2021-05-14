@@ -8,7 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@babel/core": "^7.14.2",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.58",
     "@zeit/next-less": "^1.0.1",
+    "axios": "^0.21.1",
     "file-loader": "^6.2.0",
     "less": "^4.1.1",
     "mapbox-gl": "^2.2.0",
@@ -18,7 +23,8 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "url-loader": "^4.1.1",
-    "webpack": "4.20"
+    "webpack": "4.20",
+    "worker-loader": "^3.0.8"
   },
   "devDependencies": {
     "@zeit/next-css": "^1.0.1"
