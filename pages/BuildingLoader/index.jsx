@@ -5,13 +5,13 @@ import mapboxgl from '!mapbox-gl';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 import defaultJSON from './Futian.json'
-import layer from './class/layer.js'
+import layer from './class/layer.mjs'
 
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import Button from '@material-ui/core/Button';
 
-import ListView from './components/ListView'
-import DialogView from './components/DialogView'
+import ListView from '../../components/BuildingLoader/ListView'
+import DialogView from '../../components/BuildingLoader/DialogView'
 import { clearPrewarmedResources } from 'mapbox-gl';
 
 mapboxgl.workerClass = MapboxWorker;

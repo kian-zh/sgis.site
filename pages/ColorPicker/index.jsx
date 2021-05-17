@@ -1,4 +1,4 @@
-import { hsl2rgb, rgb2hex, hsla2rgba } from './utils';
+import { hsl2rgb, rgb2hex, hsla2rgba } from './utils.mjs';
 import React from 'react'
 import style from './index.module.less'
 import ImgBackground from './background.png'
