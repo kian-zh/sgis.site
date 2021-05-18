@@ -5,7 +5,7 @@ import mapboxgl from '!mapbox-gl';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 import defaultJSON from './Futian.json'
-import layer from './class/layer.mjs'
+import layer from '../../components/BuildingLoader/class/layer.js'
 
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import Button from '@material-ui/core/Button';
@@ -13,6 +13,7 @@ import Button from '@material-ui/core/Button';
 import ListView from '../../components/BuildingLoader/ListView'
 import DialogView from '../../components/BuildingLoader/DialogView'
 import { clearPrewarmedResources } from 'mapbox-gl';
+import MapboxHead from '../../components/MapboxHead'
 
 mapboxgl.workerClass = MapboxWorker;
 
@@ -205,6 +206,7 @@ class BuildingLoader extends React.Component {
   render() {
     return (
         <div style={{position:'absolute',width:'100vw',height:'100vh'}}>
+          <MapboxHead />
             <div className={style.banner}>
                 <h1 className={style.title}>A Web-based 3D Building Loader</h1>
                 <Button disableElevation variant="contained" color="primary"

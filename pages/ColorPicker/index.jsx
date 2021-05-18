@@ -1,4 +1,4 @@
-import { hsl2rgb, rgb2hex, hsla2rgba } from './utils.mjs';
+import { hsl2rgb, rgb2hex, hsla2rgba } from '../../components/ColorPicker/utils';
 import React from 'react'
 import style from './index.module.less'
 import ImgBackground from './background.png'
