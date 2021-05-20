@@ -24,7 +24,6 @@ class VisiterCounter extends React.Component {
         }else{
             statistics.count_country[country] = 1
         }
-        console.log(statistics)
         await OSSClient.put('Statistics/','count.json', statistics)
     }
   
