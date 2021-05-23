@@ -63,7 +63,9 @@ class Blog extends React.Component {
           <h1>Blog</h1>
           <h4>张景源的部落格</h4>
           {this.renderList()}
-          <h6>网站总访问量: {this.countAll()} {'\u00A0\u00A0'}<a className={style.addButton}>新增博文</a></h6>
+          <h6>网站总访问量: {this.countAll()} {'\u00A0\u00A0'}
+            <a href="./Blog/addArticle" className={style.addButton}>新增博文</a>
+          </h6>
         </div>
       </div>
     );
