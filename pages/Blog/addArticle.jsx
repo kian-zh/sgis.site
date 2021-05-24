@@ -3,6 +3,7 @@ import style from './addArticle.module.less'
 import OSSClient from '../../components/OSSClient'
 import { TextField, Button, Snackbar } from '@material-ui/core'
 import Alert from '@material-ui/lab/Alert';
+import marked from 'marked'
 
 class Blog extends React.Component {
   constructor() {
@@ -29,6 +30,8 @@ class Blog extends React.Component {
 
   submit(){
     if(this.state.key != 'Abc123456abcd'){
+        const markedContent = marked(this.state.content)
+        console.log(markedContent)
         this.setState({isAlert: true, message: '密码错误', submitState: 'error'})
     }else{
         console.log(this.state.content)

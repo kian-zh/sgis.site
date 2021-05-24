@@ -2928,6 +2928,11 @@ mapbox-gl@^2.2.0:
     tinyqueue "^2.0.3"
     vt-pbf "^3.1.1"
 
+marked@^2.0.5:
+  version "2.0.5"
+  resolved "http://mirrors.tencent.com/npm/marked/-/marked-2.0.5.tgz#2d15c759b9497b0e7b5b57f4c2edabe1002ef9e7"
+  integrity sha512-yfCEUXmKhBPLOzEC7c+tc4XZdIeTdGoRCZakFMkCxodr7wDXqoapIME4wjcpBPJLNyUnKJ3e8rb8wlAgnLnaDw==
+
 material-ui@^0.20.2:
   version "0.20.2"
   resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-0.20.2.tgz#5fc9b4b62b691d3b16c89d8e54597a0412b52c7d"
