@@ -147,6 +147,8 @@ class Intro extends React.Component {
             <a href='http://sgis.site/Sprite/webglDemo.html'>WebGL Demo with spriteJS</a>
             <br/>
             <a href='http://sgis.site/BuildingLoader.html'>3D building Loader</a>
+            <br/>
+            <a href='http://sgis.site/Ruler.html'>A Ruler</a>
           </div>
         </div>
 
