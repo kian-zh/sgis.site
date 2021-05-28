@@ -5,12 +5,16 @@ import { TextField, Button, Snackbar } from '@material-ui/core'
 import Alert from '@material-ui/lab/Alert';
 import marked from 'marked'
 
+const Pre_HTML = ""
+const Post_HTML = ""
+
 class Blog extends React.Component {
   constructor() {
     super();
     this.state = {
         title: '',
         content: '',
+        html: '',
         key: '',
         submitState: '',
         message: '',
@@ -30,13 +34,20 @@ class Blog extends React.Component {
 
   submit(){
     if(this.state.key != 'Abc123456abcd'){
-        const markedContent = marked(this.state.content)
-        console.log(markedContent)
         this.setState({isAlert: true, message: '密码错误', submitState: 'error'})
     }else{
-        console.log(this.state.content)
-        this.setState({isAlert: true, message: '', submitState: 'success'})
+      const title = this.state.title
+      this.setState({isAlert: true, message: '发布成功', submitState: 'success'})
     }
+  }
+
+  mark(){
+    const markedContent = marked(this.state.content)
+    const html = Pre_HTML + markedContent + Post_HTML
+    this.setState({html})
+  }
+
+  componentDidMount() {
   }
 
   render() { 
@@ -61,11 +72,26 @@ class Blog extends React.Component {
               label="正文"
               multiline
               fullWidth
-              rows={10}
+              rows={20}
               required
               variant="filled"
               style={{ margin: 8 }}
               value={this.state.content}
+              onChange={this.handleChange}
+            />
+            <br/>
+            <Button size="large" variant="contained" color="primary" onClick={()=>{this.mark()}}>
+                格式化
+            </Button>
+            <TextField
+              id="markedContent"
+              label=""
+              multiline
+              fullWidth
+              rows={20}
+              variant="filled"
+              style={{ margin: 8 }}
+              value={this.state.html}
               onChange={this.handleChange}
             />
             <TextField
@@ -78,11 +104,11 @@ class Blog extends React.Component {
               value={this.state.key}
               onChange={this.handleChange}
             />
-          </form>
-          <br/>
-          <Button size="large" variant="contained" color="primary" onClick={()=>{this.submit()}}>
-              提交
+            <br/>
+            <Button size="large" variant="contained" color="primary" onClick={()=>{this.submit()}}>
+                提交
             </Button>
+          </form>
         </div>
         <Snackbar
             anchorOrigin={{
