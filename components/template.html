@@ -1,44 +1,14 @@
 <html>
   <head>
-    <style>
-      body{
-        background-color: rgb(212, 212, 212);
-        line-height: 1.8;
-      }
-      article{
-        font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-        max-width: 800px;
-        width: 100%;
-        margin: auto;
-        padding: 100px;
-        padding-top: 20px;
-        margin-top: 100px;
-        margin-bottom: 100px;
-        background-color: rgb(238, 234, 229);
-        box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
-      }
-      a{
-        text-decoration: none;
-        border-bottom: 1px solid #2f6f9c;
-        color: #2f6f9c;
-      }
-      a:hover{
-        background-color: rgb(207, 235, 222);
-      }
-      .count{
-        color: rgb(41, 11, 88);
-        font-family: "Times New Roman";
-        font-size: larger;
-      }
-    </style>
+    <link href='./template.css' rel='stylesheet' />
   </head>
   <body>
     <article>
-      <a>返回列表</a>
+      <a href="http://sgis.site/Blog.html">返回列表</a>
       <br/><br/>
       <h1> WebGIS 框架 </h1>
       <a href="http://sgis.site">张景源</a><br/> 
-      2021年5月28日 访问量 <span class="count">1022</span>
+      <span id="date">2021年5月28日</span> 访问量 <span id="count" class="count">1022</span>
       <hr/>
       <!-- begin -->
       <h3 id="1-leaflet">1. Leaflet</h3>
@@ -64,6 +34,13 @@
       <!-- end -->
       <br/><hr/>
       <h3>评论区</h3>
+      <div id="comment">
+        <p>"<a>一</a>" 说到：<i>为什么</i></p>
+      </div>
     </article>
+    <script src="./template.js"></script>
+    <script type="text/javascript">
+      init(1)
+    </script>
   </body>
 </html>

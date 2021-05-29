@@ -13,6 +13,7 @@ class Blog extends React.Component {
     super();
     this.state = {
         title: '',
+        tag: '',
         content: '',
         html: '',
         key: '',
@@ -93,6 +94,16 @@ class Blog extends React.Component {
               style={{ margin: 8 }}
               value={this.state.html}
               onChange={this.handleChange}
+            />
+            <TextField
+              id="tag"
+              label="标签"
+              style={{ margin: 8 }}
+              fullWidth
+              value={this.state.tag}
+              onChange={this.handleChange}
+              variant="filled"
+              margin="normal"
             />
             <TextField
               id="key"
