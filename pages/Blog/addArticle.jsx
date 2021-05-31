@@ -5,8 +5,8 @@ import { TextField, Button, Snackbar } from '@material-ui/core'
 import Alert from '@material-ui/lab/Alert';
 import marked from 'marked'
 
-const Pre_HTML = ""
-const Post_HTML = ""
+
+
 
 class Blog extends React.Component {
   constructor() {
@@ -44,7 +44,51 @@ class Blog extends React.Component {
 
   mark(){
     const markedContent = marked(this.state.content)
-    const html = Pre_HTML + markedContent + Post_HTML
+    const Y = new Date().getFullYear()
+    const M = new Date().getMonth() + 1
+    const D = new Date().getDate()
+    const dateString = `${Y}年${M}月${D}日`
+    const html = `
+      <html>
+        <head>
+          <link href='./template.css' rel='stylesheet' />
+        </head>
+        <body>
+          <article>
+            <a href="http://sgis.site/Blog.html">返回列表</a>
+            <br/><br/>
+            <h1>${this.state.title}</h1>
+            <a href="http://sgis.site">张景源</a><br/> 
+            <span id="date">${dateString}</span> 访问量 <span id="count" class="count"></span>
+            <hr/>
+            <!-- begin -->
+            ${markedContent}
+            <!-- end -->
+            <br/><hr/>
+            <h3>评论区</h3>
+            <div id="comment">
+              <!-- ... -->
+            </div>
+            <div>
+              <h4>新评论</h4>
+              你的名字*<input id="name" type="text"></input>
+              你的URL（可选）<input id="url" type="text"></input>
+              <br/>
+              你的评论*<textarea id="content"></textarea>
+              <button onclick="addComments()">提交</button>
+            </div>
+          </article>
+          <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+          <script src="./template.js"></script>
+          <script type="text/javascript">
+            index = ${index}
+            getCount()
+            getComments()
+          </script>
+        </body>
+      </html>
+      `
+
     this.setState({html})
   }
 
