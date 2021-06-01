@@ -68,7 +68,11 @@ function addComments(){
         url: $('#url').val()?$('#url').val():'',
         content: $('#content').val(),
       }
-      data[index].push(item)
+      if(data[index]){
+        data[index].push(item)
+      }else{
+        data[index] = [item]
+      }
       const myFile = new Blob([JSON.stringify(data)], {type: 'application/json'})
       //  传回
       $.ajax({

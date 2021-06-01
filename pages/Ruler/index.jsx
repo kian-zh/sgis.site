@@ -41,7 +41,7 @@ class Ruler extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         </Head>
         <div className={style.title}>
-          尺子<span className={style.subtitle}>真实的尺寸</span>
+          尺子<span className={style.subtitle}>在高分辨率屏幕下为真实的尺寸</span>
         </div>
         <div className={style.ruler}>
           <div className={style.markerContainer}>
