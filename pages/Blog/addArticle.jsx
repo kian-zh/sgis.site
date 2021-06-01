@@ -80,6 +80,11 @@ class Blog extends React.Component {
       <html>
         <head>
           <meta charset="utf-8">
+          <title>${this.state.title}</title>
+          <meta
+          name="keywords"
+          content="张景源, Jingyuan, Zhang, ${this.state.tag}"
+          />
           <link href='http://sgis.site/BlogSources/template.css' rel='stylesheet' />
         </head>
         <body>

@@ -3,7 +3,7 @@ import Head from 'next/head'
 const MyHead = () => (
     <Head>
         <meta charSet="utf-8" />
-        <link rel="icon" type="image/png" href="%PUBLIC_URL%/logo.png" />
+        <link rel="icon" type="image/png" href="./logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta
