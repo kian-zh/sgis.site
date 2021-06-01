@@ -3,10 +3,8 @@ import style from './addArticle.module.less'
 import OSSClient from '../../components/OSSClient'
 import { TextField, Button, Snackbar } from '@material-ui/core'
 import Alert from '@material-ui/lab/Alert';
-import marked from 'marked'
-
-
-
+import marked from 'marked';
+import axios from 'axios';
 
 class Blog extends React.Component {
   constructor() {
@@ -33,25 +31,55 @@ class Blog extends React.Component {
     this.setState({isAlert: false})
   }
 
-  submit(){
+  async submit(){
     if(this.state.key != 'Abc123456abcd'){
         this.setState({isAlert: true, message: '密码错误', submitState: 'error'})
     }else{
-      const title = this.state.title
-      this.setState({isAlert: true, message: '发布成功', submitState: 'success'})
+      try{
+        const Y = new Date().getFullYear()
+        const M = new Date().getMonth() + 1
+        const D = new Date().getDate()
+        let index = 0
+        const dateString = `${Y}年${M}月${D}日`
+        const list = await OSSClient.get('BlogSources/','list.json')
+        const years = Object.keys(list)
+        index = list[years[0]][0].index + 1
+        const item = {
+          "index":index.toString(),
+          "title":this.state.title,
+          "tag": this.state.tag.split(','),
+          "date": dateString,
+          "link": "http://sgis.site/BlogSources/"+this.state.title+".html"
+        }
+        if(Y.toString() == years[0].toString()){
+          list[years[0]].unshift(item)
+        }else{
+          list[Y.toString()] = [item]
+        }
+        await OSSClient.put('BlogSources/','list.json', list)
+        const myFile = new Blob(this.state.html, {type: 'text/html'})
+        await axios.put('http://sgis.site/BlogSources/articles/' + this.state.title +'.html', myFile)
+        this.setState({isAlert: true, message: '发布成功', submitState: 'success'})
+      }catch(e){
+        alert(e)
+      }
     }
   }
 
-  mark(){
+  async mark(){
     const markedContent = marked(this.state.content)
     const Y = new Date().getFullYear()
     const M = new Date().getMonth() + 1
     const D = new Date().getDate()
+    let index = 0
     const dateString = `${Y}年${M}月${D}日`
+    //  const list = await OSSClient.get('BlogSources/','list.json')
+    //  const years = Object.keys(list)
+    //  index = list[years[0]][0].index + 1
     const html = `
       <html>
         <head>
-          <link href='./template.css' rel='stylesheet' />
+          <link href='http://sgis.site/BlogSources/template.css' rel='stylesheet' />
         </head>
         <body>
           <article>
@@ -79,7 +107,7 @@ class Blog extends React.Component {
             </div>
           </article>
           <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-          <script src="./template.js"></script>
+          <script src="http://sgis.site/BlogSources/template.js"></script>
           <script type="text/javascript">
             index = ${index}
             getCount()
@@ -88,7 +116,6 @@ class Blog extends React.Component {
         </body>
       </html>
       `
-
     this.setState({html})
   }
 

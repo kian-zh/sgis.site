@@ -29,7 +29,7 @@ class Blog extends React.Component {
       const date = ar.date
       const link = ar.link
       const index = ar.index
-      const count = this.state.count['count_articles'][index]
+      const count = this.state.count['count_articles'][index.toString()]
       articles.push(
         <li>
           <a href={link} className={style.articleLink}>{title}</a><br/>

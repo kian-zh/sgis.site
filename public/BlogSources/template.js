@@ -7,10 +7,14 @@ function getCount(index) {
     data: {},
     success: function(data){
       const localData = data
-      const count = data['count_articles'][index]
+      const count = data['count_articles'][index.toString()]
       $('#count').text(count.toString())
       //  统计数据自增一
-      localData['count_articles'][index] += 1
+      if(localData['count_articles'][index.toString()]){
+        localData['count_articles'][index.toString()] += 1
+      }else{
+        localData['count_articles'][index.toString()] = 1
+      }
       console.log('记录增加1')
       const myFile = new Blob([JSON.stringify(localData)], {type: 'application/json'})
       //  传回
