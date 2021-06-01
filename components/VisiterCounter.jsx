@@ -18,8 +18,7 @@ class VisiterCounter extends React.Component {
         //  总访问量加一
         statistics.count_all += 1
         //  国家访问加一
-        const countryList = Object.keys(statistics.count_country)
-        if(country in countryList){
+        if(statistics.count_country[country]){
             statistics.count_country[country] += 1
         }else{
             statistics.count_country[country] = 1

@@ -6,7 +6,10 @@ function getCount() {
     type: 'GET',
     data: {},
     success: function(data){
-      const localData = JSON.parse(data)
+      if(typeof data == 'string'){
+        data = JSON.parse(data)
+      }
+      const localData = data
       //  统计数据自增一
       if(localData['count_articles'][index.toString()]){
         localData['count_articles'][index.toString()] += 1
@@ -34,7 +37,9 @@ function getComments(){
     type: 'GET',
     data: {},
     success: function(data){
-      data = JSON.parse(data)
+      if(typeof data == 'string'){
+        data = JSON.parse(data)
+      }
       const thisComments = data[index]
       let html = ""
       thisComments.forEach(function(i){
@@ -55,7 +60,9 @@ function addComments(){
     type: 'GET',
     data: {},
     success: function(data){
-      data = JSON.parse(data)
+      if(typeof data == 'string'){
+        data = JSON.parse(data)
+      }
       const item = {
         name: $('#name').val(),
         url: $('#url').val()?$('#url').val():'',
