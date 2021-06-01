@@ -26,9 +26,17 @@
   font-size: 1.6em;
 }
 .addButton{
-  color: rgb(27, 99, 13);
+  color: rgb(69, 99, 155);
   text-decoration: underline;
 }
 .addButton:hover{
   background-color: rgb(224, 224, 197);
+}
+.subTitle{
+  color: rgb(156, 156, 156);
+  font-size: calc(10px + 0.3vw);
+  margin-left: 20px;
+}
+.footer{
+  font-weight: 100;
 }

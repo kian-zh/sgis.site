@@ -32,14 +32,14 @@ class Blog extends React.Component {
       const count = this.state.count['count_articles'][index.toString()]
       articles.push(
         <li>
-          <a href={link} className={style.articleLink}>{title}</a><br/>
-          <span >于{date}发布, 共{count}次访问</span>
+          <a href={link} className={style.articleLink}>{title}</a>
+          <span className={style.subTitle}>{date}，{count}次访问</span>
         </li>
       )
     })
     return (
       <div>
-        <h6>{year}年</h6>
+        <h5>{year}年</h5>
         <ul>
           {articles}
         </ul>
@@ -63,9 +63,11 @@ class Blog extends React.Component {
           <h1>Blog</h1>
           <h4>张景源的部落格</h4>
           {this.renderList()}
-          <h6>网站总访问量: {this.countAll()} {'\u00A0\u00A0'}
-            <a href="./Blog/addArticle" className={style.addButton}>新增博文</a>
-          </h6>
+          <br/>
+          <hr/>
+          <h5 class={style.footer}>网站总访问量: {this.countAll()} {'\u00A0\u00A0'}
+            <a href="./Blog/addArticle.html" className={style.addButton}>新增博文</a>
+          </h5>
         </div>
       </div>
     );

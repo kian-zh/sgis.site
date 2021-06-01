@@ -79,6 +79,7 @@ class Blog extends React.Component {
     const html = `
       <html>
         <head>
+          <meta charset="utf-8">
           <link href='http://sgis.site/BlogSources/template.css' rel='stylesheet' />
         </head>
         <body>
