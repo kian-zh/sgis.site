@@ -43,7 +43,7 @@ class Blog extends React.Component {
         const dateString = `${Y}年${M}月${D}日`
         const list = await OSSClient.get('BlogSources/','list.json')
         const years = Object.keys(list)
-        index = list[years[0]][0].index + 1
+        index = Number(list[years[0]][0].index) + 1
         const item = {
           "index":index.toString(),
           "title":this.state.title,
@@ -57,7 +57,7 @@ class Blog extends React.Component {
           list[Y.toString()] = [item]
         }
         await OSSClient.put('BlogSources/','list.json', list)
-        const myFile = new Blob(this.state.html, {type: 'text/html'})
+        const myFile = new Blob([this.state.html], {type: 'text/html'})
         await axios.put('http://sgis.site/BlogSources/articles/' + this.state.title +'.html', myFile)
         this.setState({isAlert: true, message: '发布成功', submitState: 'success'})
       }catch(e){

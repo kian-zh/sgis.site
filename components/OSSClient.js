@@ -14,14 +14,14 @@ const client = {
             }else{
                 myFile = new Blob([JSON.stringify(file)], {type: 'application/json'})
             }
-          await axios.put('http://sgis.site/' + path + name, myFile)
+          return axios.put('http://sgis.site/' + path + name, myFile)
         } catch (e) {
           console.log(e);
         }
     },
     get: async (path, name) => {
         let result = null
-        await axios.get('http://sgis.site/' + path + name)
+        axios.get('http://sgis.site/' + path + name)
             .then((response) => {result = response.data})
             .catch((error) => {console.log(error)})
         return result

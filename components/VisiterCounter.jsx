@@ -15,12 +15,15 @@ class VisiterCounter extends React.Component {
             .then((response) => {country = response.data.country})
             .catch((error) => {console.log(error)})
         statistics = await OSSClient.get('Statistics/','count.json')
+        if(!statistics){
+          return;
+        }
         //  总访问量加一
         statistics.count_all += 1
         //  国家访问加一
         if(statistics.count_country[country]){
             statistics.count_country[country] += 1
-        }else{
+        } else {
             statistics.count_country[country] = 1
         }
         await OSSClient.put('Statistics/','count.json', statistics)
@@ -32,15 +35,6 @@ class VisiterCounter extends React.Component {
     render() {
       return (
         <div>
-            {/*
-            <script type="text/javascript">
-                var userip
-            </script>
-            <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
-            <script type="text/javascript">
-                console.log(userip)
-            </script>
-            */}
         </div>
       )
     }
