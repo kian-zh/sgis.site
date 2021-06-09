@@ -29,7 +29,8 @@ class Blog extends React.Component {
       const date = ar.date
       const link = ar.link
       const index = ar.index
-      const count = this.state.count['count_articles'][index.toString()]
+      const remoteCount = this.state.count['count_articles'][index.toString()]
+      const count =  remoteCount?remoteCount:0
       articles.push(
         <li>
           <a href={link} className={style.articleLink}>{title}</a>
@@ -40,7 +41,7 @@ class Blog extends React.Component {
     return (
       <div>
         <h5>{year}年</h5>
-        <ul>
+        <ul className={style.list}>
           {articles}
         </ul>
       </div>)
@@ -65,7 +66,7 @@ class Blog extends React.Component {
           {this.renderList()}
           <br/>
           <hr/>
-          <h5 class={style.footer}>网站总访问量: {this.countAll()} {'\u00A0\u00A0'}
+          <h5 className={style.footer}>网站总访问量: {this.countAll()} {'\u00A0\u00A0'}
             <a href="./Blog/addArticle.html" className={style.addButton}>新增博文</a>
           </h5>
         </div>

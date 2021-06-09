@@ -21,7 +21,7 @@ const client = {
     },
     get: async (path, name) => {
         let result = null
-        axios.get('http://sgis.site/' + path + name)
+        await axios.get('http://sgis.site/' + path + name)
             .then((response) => {result = response.data})
             .catch((error) => {console.log(error)})
         return result
