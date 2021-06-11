@@ -10,11 +10,12 @@ const client = {
         try {
             let myFile = null
             if(file instanceof Blob){
-                myFile = file
-            }else{
-                myFile = new Blob([JSON.stringify(file)], {type: 'application/json'})
-            }
-          return axios.put('http://sgis.site/' + path + name, myFile)
+                    myFile = file
+                }else{
+                    myFile = new Blob([JSON.stringify(file)], {type: 'application/json'})
+                }
+            const headers = {headers: {'Content-Type': 'application/json'}}
+            return axios.put('http://sgis.site/' + path + name, myFile, headers)
         } catch (e) {
           console.log(e);
         }

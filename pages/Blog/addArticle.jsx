@@ -72,7 +72,7 @@ class Blog extends React.Component {
     const dateString = `${Y}年${M}月${D}日`
     const list = await OSSClient.get('BlogSources/','list.json')
     const years = Object.keys(list)
-    index = list[years[0]][0].index + 1
+    index = Number(list[years[0]][0].index) + 1
     const html = `
       <html>
         <head>

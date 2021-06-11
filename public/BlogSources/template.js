@@ -6,6 +6,9 @@ function getCount() {
     type: 'GET',
     data: {},
     success: function(data){
+      if(!data){
+        return;
+      }
       if(typeof data == 'string'){
         data = JSON.parse(data)
       }
@@ -13,10 +16,10 @@ function getCount() {
       //  统计数据自增一
       if(localData['count_articles'][index.toString()]){
         localData['count_articles'][index.toString()] += 1
-        
       }else{
         localData['count_articles'][index.toString()] = 1
       }
+      localData['count_all'] += 1
       $('#count').text(localData['count_articles'][index.toString()])
       console.log('记录增加1')
       const myFile = new Blob([JSON.stringify(localData)], {type: 'application/json'})
@@ -41,15 +44,17 @@ function getComments(){
         data = JSON.parse(data)
       }
       const thisComments = data[index]
-      let html = ""
-      thisComments.forEach(function(i){
-        if(i.url){
-          html += `<p>\"<a href=\"${i.url}\">${i.name}</a>\" 说到：<i>${i.content}</i></p>`
-        }else{
-          html += `<p>\"${i.name}\" 说到：<i>${i.content}</i></p>`
-        }
-      })
-      $('#comment').html(html)
+      if(thisComments) {
+        let html = ""
+        thisComments.forEach(function(i){
+          if(i.url){
+            html += `<p>\"<a href=\"${i.url}\">${i.name}</a>\" 说到：<i>${i.content}</i></p>`
+          }else{
+            html += `<p>\"${i.name}\" 说到：<i>${i.content}</i></p>`
+          }
+        })
+        $('#comment').html(html)
+      }
     }
   })
 }
