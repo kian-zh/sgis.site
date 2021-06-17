@@ -22,14 +22,32 @@ function getCount() {
       localData['count_all'] += 1
       $('#count').text(localData['count_articles'][index.toString()])
       console.log('记录增加1')
+      $.ajax({
+        url: 'https://api.country.is',
+        type: 'GET',
+        data: {},
+        success: function(data){
+          const country = data.country
+          if(localData.count_country[country]){
+            localData.count_country[country] += 1
+          } else {
+            localData.count_country[country] = 1
+          }
+        }
+      })
       const myFile = new Blob([JSON.stringify(localData)], {type: 'application/json'})
       //  传回
-      $.ajax({
-        url: 'http://sgis.site/Statistics/count.json',
-        type: 'PUT',
-        processData:false,
-        data: myFile
-      })
+      try{
+        $.ajax({
+          url: 'http://sgis.site/Statistics/count.json',
+          type: 'PUT',
+          processData:false,
+          data: myFile
+        })
+      } catch(e) {
+        alert('文件上传错误')
+        console.log(e)
+      }
     } 
   })
 }
@@ -71,7 +89,7 @@ function addComments(){
       const item = {
         name: $('#name').val(),
         url: $('#url').val()?$('#url').val():'',
-        content: $('#content').val(),
+        content: escape($('#content').val()),
       }
       if(data[index]){
         data[index].push(item)
@@ -94,23 +112,29 @@ function addComments(){
   })
 }
 
-  /*
-  不需要获取list
-  //  获取list
-  $.ajax({
-    url: 'http://sgis.site/BlogSources/list.json',
-    type: 'GET',
-    data: {},
-    success: function(data){
-      var info = null
-      var years = Object.keys(data)
-      years.forEach(function(year){
-        data[year].forEach(function(ar){
-          if(ar.index == index){
-            info = ar
-          }
-        })
-      })
-    } 
-  })
-  */
+function escape(str) {
+  let newStr = ''
+  for (index = 0; index < str.length; index++) {
+    switch (str.charCodeAt(index)) {
+      case 34: // "
+        newStr += '&quot;';
+        break;
+      case 38: // &
+        newStr += '&amp;';
+        break;
+      case 39: // '
+        newStr += '&#x27;';
+        break;
+      case 60: // <
+        newStr += '&lt;';
+        break;
+      case 62: // >
+        newStr += '&gt;';
+        break;
+      default:
+        newStr += str[index];
+        continue;
+    }
+    return newStr;
+  }
+}

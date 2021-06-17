@@ -35,4 +35,5 @@ pre{
     border-left: rgb(151, 161, 143) solid 4px;
     padding: 10px;
     background-color: rgb(221, 228, 216);
+    overflow-x: auto;
 }
