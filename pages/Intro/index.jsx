@@ -109,7 +109,11 @@ class Intro extends React.Component {
             </p>
             <p>
             Also, he has extensive experience in front-end development and GIS development. 
-            He used to work as an intern at <a href="http://www.jupchina.com/webpage/index.jsp">JUP</a>, <a style={{whiteSpace:'nowrap'}} href="https://www.geoscene.cn/">Esri China</a>, <a href="https://www.sf-tech.com.cn/">SF-Tech</a> and <a href="https://www.aztech.com/business/">Aztech</a>.
+            He used to work as an intern at <a href="https://www.jspdg.com/">JUP</a>,{' '}
+            <a style={{whiteSpace:'nowrap'}} href="https://www.geoscene.cn/">Esri China</a>,{' '}
+            <a href="https://www.sf-tech.com.cn/">SF-Tech</a>,{' '}
+            <a href="https://www.aztech.com/business/">Aztech</a>,{' '}
+            and{' '}<a href="https://www.tencent.com">Tencent</a>.
             </p>
             <br/>
             <a href='http://sgis.site/CV.html'>Full-text Curriculum Vitae</a>
