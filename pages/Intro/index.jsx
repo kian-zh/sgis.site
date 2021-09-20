@@ -180,7 +180,7 @@ class Intro extends React.Component {
               <br/>
               <br/>
               This page was built with React<br/>
-              and updated at 24 Mar. 2021<br/>
+              and updated at 20 Sept. 2021<br/>
               版权所有© 2021
               Jingyuan Zhang 
               All rights reserved.
