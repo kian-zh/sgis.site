@@ -165,6 +165,7 @@ class Intro extends React.Component {
               <br/>
               <br/>
               <div>
+                {/*
                 Friends' Links:
                 <br/>
                 <a style={{'color':'rgb(200, 200, 200)'}} href='https://hanwgeek.github.io/'>Han Wang</a> in Spatial-Temporal Analysis
@@ -172,6 +173,7 @@ class Intro extends React.Component {
                 <a style={{'color':'rgb(200, 200, 200)'}} href='https://xuxue.pl'>Xu Xue</a> in Programming Language
                 <br/>
                 <a style={{'color':'rgb(200, 200, 200)'}} href='http://yutingwu816.gitee.io/personal-website/'>Yuting Wu</a> in Front-end development
+                */}
               </div>
             </div>
             <div className={style.footerContentPart}>
