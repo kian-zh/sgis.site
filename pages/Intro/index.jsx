@@ -1,11 +1,12 @@
 import React from 'react'
-import pic_me from './me.png'
+//  import pic_me from './me.png'
+import pic_me from './me2.jpg'
 import pic_linkedin from './linkedin.png'
 import pic_github from './github.png'
 import pic_zhihu from './zhihu.png'
 import pic_csdn from './csdn.png'
 import mapboxgl from 'mapbox-gl';
-import style from './index.module.css'
+import style from './index.module.less'
 import MyHead from '../../components/MyHead'
 import MapboxHead from '../../components/MapboxHead'
 
@@ -85,14 +86,15 @@ class Intro extends React.Component {
 
         {/*第一页*/}
         <div className={style.page1}>
-          <img className={style.myPic} alt='Me' src={pic_me} /><br/>
-          <h1 style={{ lineHeight:'10vh'}}>Jingyuan Zhang <span style={{whiteSpace:'nowrap'}}>张景源</span></h1>
-          <h2>Front-End Developer & <span style={{whiteSpace:'nowrap'}}>GIS Developer</span></h2>
-          <h2>Working<span style={{whiteSpace:'nowrap'}}></span> for Better User Interface</h2>
-          <img className={style.imgToClick} alt='Pictrue of Linkedin' src={pic_linkedin} onClick={()=>{window.open("https://www.linkedin.com/in/zhang1998/")}} />
-          <img className={style.imgToClick} alt='Pictrue of Zhihu' src={pic_zhihu} onClick={()=>{window.open("https://www.zhihu.com/people/sgis")}} />
-          <img className={style.imgToClick} alt='Pictrue of CSDN' src={pic_csdn} onClick={()=>{window.open("https://blog.csdn.net/nju_zjy")}} />
-          <img className={style.imgToClick} alt='Pictrue of Github' src={pic_github} onClick={()=>{window.open("https://github.com/kian-zh")}} />
+          <div className={style.page1Content}>
+            <img className={style.myPic} alt='Me' src={pic_me} /><br/>
+            <h1 style={{ lineHeight:'10vh'}}>Jingyuan Zhang <span style={{whiteSpace:'nowrap'}}>张景源</span></h1>
+            <h2>Front-End / GeoInfo / Cartography</h2>
+            <img className={style.imgToClick} alt='Pictrue of Linkedin' src={pic_linkedin} onClick={()=>{window.open("https://www.linkedin.com/in/zhang1998/")}} />
+            <img className={style.imgToClick} alt='Pictrue of Zhihu' src={pic_zhihu} onClick={()=>{window.open("https://www.zhihu.com/people/sgis")}} />
+            <img className={style.imgToClick} alt='Pictrue of CSDN' src={pic_csdn} onClick={()=>{window.open("https://blog.csdn.net/nju_zjy")}} />
+            <img className={style.imgToClick} alt='Pictrue of Github' src={pic_github} onClick={()=>{window.open("https://github.com/kian-zh")}} />
+          </div>
         </div>
 
         {/*第二页*/}
@@ -100,8 +102,7 @@ class Intro extends React.Component {
           <div className={style.page3Content}>
             <h2 style={{color: '#fff'}}>Biography</h2>
             <p>
-            Jingyuan Zhang received the BSc degree in GIS from Nanjing Univeristy, in 2020.
-            He is currently a graduate student at The Chinese Univeristy of Hongkong.
+            Jingyuan Zhang received the BSc degree in GIS from Nanjing Univeristy, and MSc degree from The Chinese Univeristy of Hongkong.
             </p>
             <p>
             He has <a href='http://sgis.site/Research.html'>research experience</a> in remote sensing image processing, spatial analysis, etc. 
@@ -165,22 +166,20 @@ class Intro extends React.Component {
               <br/>
               <br/>
               <div>
-                {/*
                 Friends' Links:
                 <br/>
-                <a style={{'color':'rgb(200, 200, 200)'}} href='https://hanwgeek.github.io/'>Han Wang</a> in Spatial-Temporal Analysis
+                <a style={{'color':'rgb(200, 200, 200)'}} href='https://github.com/HanwGeek'>Han Wang</a> in Spatial-Temporal Analysis
                 <br/>
-                <a style={{'color':'rgb(200, 200, 200)'}} href='https://xuxue.pl'>Xu Xue</a> in Programming Language
+                <a style={{'color':'rgb(200, 200, 200)'}} href='https://web.hku.hk/~xuxue/'>Xu Xue</a> in Programming Language
                 <br/>
                 <a style={{'color':'rgb(200, 200, 200)'}} href='http://yutingwu816.gitee.io/personal-website/'>Yuting Wu</a> in Front-end development
-                */}
               </div>
             </div>
             <div className={style.footerContentPart}>
               <br/>
               <br/>
               This page was built with React<br/>
-              and updated at 20 Sept. 2021<br/>
+              and updated at 20 Oct. 2021<br/>
               版权所有© 2021
               Jingyuan Zhang 
               All rights reserved.
