@@ -88,8 +88,13 @@ class Intro extends React.Component {
         <div className={style.page1}>
           <div className={style.page1Content}>
             <img className={style.myPic} alt='Me' src={pic_me} /><br/>
-            <h1 style={{ lineHeight:'10vh'}}>Jingyuan Zhang <span style={{whiteSpace:'nowrap'}}>张景源</span></h1>
-            <h2>Front-End / GeoInfo / Cartography</h2>
+            <h1>Jingyuan Zhang <span style={{whiteSpace:'nowrap'}}>张景源</span></h1>
+            <h2 style={{ color: 'rgba(109, 78, 70, 0.6)' }}>Front-End / GeoInfo / Cartography</h2>
+            <h2>
+              <a href="https://blog.csdn.net/nju_zjy">📃Blog</a>
+              <a onClick={()=>{alert('正在建设中')}}>🖼Album</a>
+              <a href="http://sgis.site/Resources.html">🚚Downloads</a>
+            </h2>
             <img className={style.imgToClick} alt='Pictrue of Linkedin' src={pic_linkedin} onClick={()=>{window.open("https://www.linkedin.com/in/zhang1998/")}} />
             <img className={style.imgToClick} alt='Pictrue of Zhihu' src={pic_zhihu} onClick={()=>{window.open("https://www.zhihu.com/people/sgis")}} />
             <img className={style.imgToClick} alt='Pictrue of CSDN' src={pic_csdn} onClick={()=>{window.open("https://blog.csdn.net/nju_zjy")}} />
@@ -176,13 +181,16 @@ class Intro extends React.Component {
               </div>
             </div>
             <div className={style.footerContentPart}>
-              <br/>
-              <br/>
               This page was built with React<br/>
               and updated at 20 Oct. 2021<br/>
               版权所有© 2021
               Jingyuan Zhang 
               All rights reserved.
+              <br/>
+              <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+              <span id="busuanzi_container_site_pv">本页面总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+              <br/>
+              苏ICP备18026842号-2
             </div>
           </div>
         </div>
