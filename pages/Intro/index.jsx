@@ -76,7 +76,7 @@ class Intro extends React.Component {
       this.setState({popup:popup});
   }
 
-  render() { 
+  render() {
     return (
       <div>
         <MyHead />
@@ -92,14 +92,21 @@ class Intro extends React.Component {
             <h2 style={{ color: 'rgba(109, 78, 70, 0.6)' }}>Front-End / GeoInfo / Cartography</h2>
             <h2>
               <a href="https://blog.csdn.net/nju_zjy">📃Blog</a>
-              <a onClick={()=>{alert('正在建设中')}}>🖼Album</a>
+              <a onClick={()=>{alert('正在建设中')}}>🌉Album</a>
               <a href="http://sgis.site/Resources.html">🚚Downloads</a>
             </h2>
-            <img className={style.imgToClick} alt='Pictrue of Linkedin' src={pic_linkedin} onClick={()=>{window.open("https://www.linkedin.com/in/zhang1998/")}} />
-            <img className={style.imgToClick} alt='Pictrue of Zhihu' src={pic_zhihu} onClick={()=>{window.open("https://www.zhihu.com/people/sgis")}} />
-            <img className={style.imgToClick} alt='Pictrue of CSDN' src={pic_csdn} onClick={()=>{window.open("https://blog.csdn.net/nju_zjy")}} />
-            <img className={style.imgToClick} alt='Pictrue of Github' src={pic_github} onClick={()=>{window.open("https://github.com/kian-zh")}} />
-          </div>
+            <h2>
+              <a href="https://www.linkedin.com/in/zhang1998/">🐤Linkedin</a>
+              <a href="https://www.zhihu.com/people/sgis">🤺Zhihu</a>
+              <a href="https://github.com/kian-zh">🦑Github</a>
+            </h2>
+            {/*
+              <img className={style.imgToClick} alt='Pictrue of Linkedin' src={pic_linkedin} onClick={()=>{window.open("https://www.linkedin.com/in/zhang1998/")}} />
+              <img className={style.imgToClick} alt='Pictrue of Zhihu' src={pic_zhihu} onClick={()=>{window.open("https://www.zhihu.com/people/sgis")}} />
+              <img className={style.imgToClick} alt='Pictrue of CSDN' src={pic_csdn} onClick={()=>{window.open("https://blog.csdn.net/nju_zjy")}} />
+              <img className={style.imgToClick} alt='Pictrue of Github' src={pic_github} onClick={()=>{window.open("https://github.com/kian-zh")}} />
+            */}
+            </div>
         </div>
 
         {/*第二页*/}
