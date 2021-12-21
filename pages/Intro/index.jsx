@@ -16,15 +16,15 @@ class Intro extends React.Component {
     this.state = {
       //  地图坐标
       point: [
-        { center: {lng: 118.35564770648534, lat: 34.3628044306963}, zoom: 13 },
-        { center: {lng: 118.78499064620274, lat: 34.129301470101524}, zoom: 16 },
-        { center: {lng: 118.9545245567819, lat: 32.11425436214563}, zoom: 14 },
-        { center: {lng: 114.21065841012057, lat: 22.41858902417195}, zoom: 10 },
+        { center: {lng: 118.35564770648534, lat: 34.3628044306963}, zoom: 6 },
+        { center: {lng: 118.78499064620274, lat: 34.129301470101524}, zoom: 6 },
+        { center: {lng: 118.9545245567819, lat: 32.11425436214563}, zoom: 6 },
+        { center: {lng: 114.21065841012057, lat: 22.41858902417195}, zoom: 6 },
       ],
       //  地图文字
       text: [
         'Born in 1998, he spent his childhood in Xinyi, a small town in northern China.',
-        'From 2013 to 2016, he studied at ShuYang High School.',
+        'From 2013 to 2016, he studied at Shuyang High School.',
         'He came to Nanjing University in 2016 and received a bachelor`s degree in Geographic Information Science in 2020.',
         'He will continue his studies at The Chinese University of Hongkong in 2020-2021.'
       ],
@@ -36,15 +36,16 @@ class Intro extends React.Component {
 
   //  初始化
   componentDidMount() {
-    mapboxgl.accessToken = 'pk.eyJ1IjoiemhhbmdqaW5neXVhbiIsImEiOiJja2R5cHhoNXYycGVtMnlteXkwZGViZDc2In0.UhckH-74AgPwMsDhPjparQ';
+    mapboxgl.accessToken = 'pk.eyJ1IjoiemhhbmdqaW5neXVhbjEyMzQiLCJhIjoiY2pubTIyenhnMDJnMDN2cWhzczJocjhiaSJ9.HSC6WDbo_XmKCKHsFmQdtQ';
     
     const map = new mapboxgl.Map({
     container: this.mapContainer,
     //  style: 'mapbox://styles/mapbox/streets-v11',
     //  style: 'mapbox://styles/mapbox/navigation-preview-day-v2',
-    style: 'mapbox://styles/mapbox/satellite-v9',
-    center: [110, 30],
-    zoom: 4,
+    //  style: 'mapbox://styles/mapbox/satellite-v9',
+    style: 'mapbox://styles/zhangjingyuan1234/ckxgam6bqhc2r14pc80o95kno',
+    center: [118.35564770648534, 34.3628044306963],
+    zoom: 6,
     scrollZoom: false,
     });
 
@@ -114,19 +115,22 @@ class Intro extends React.Component {
           <div className={style.page3Content}>
             <h2 style={{color: '#fff'}}>Biography</h2>
             <p>
-            Jingyuan Zhang received the BSc degree in GIS from Nanjing Univeristy, and MSc degree from The Chinese Univeristy of Hongkong.
+              Jingyuan Zhang received the BSc degree in GIS from Nanjing Univeristy, and MSc degree from The Chinese Univeristy of Hong Kong.
             </p>
             <p>
-            He has <a href='http://sgis.site/Research.html'>research experience</a> in remote sensing image processing, spatial analysis, etc. 
-            But now his interests are mainly concentrated in Web graphics, human-computer interaction, and data visualization.
+              He has <a href='http://sgis.site/Research.html'>research experience</a> in remote sensing image processing, spatial analysis, etc. 
+              But now his interests are mainly concentrated in Web graphics, human-computer interaction, and data visualization.
             </p>
             <p>
-            Also, he has extensive experience in front-end development and GIS development. 
-            He used to work as an intern at <a href="https://www.jspdg.com/">JUP</a>,{' '}
-            <a style={{whiteSpace:'nowrap'}} href="https://www.geoscene.cn/">Esri China</a>,{' '}
-            <a href="https://www.sf-tech.com.cn/">SF-Tech</a>,{' '}
-            <a href="https://www.aztech.com/business/">Aztech</a>,{' '}
-            and{' '}<a href="https://www.tencent.com">Tencent</a>.
+              Also, he has extensive experience in front-end development and GIS development.
+              He used to work as an intern at <a href="https://www.jspdg.com/">JUP</a>,{' '}
+              <a style={{whiteSpace:'nowrap'}} href="https://www.geoscene.cn/">Esri China</a>,{' '}
+              <a href="https://www.sf-tech.com.cn/">SF-Tech</a>,{' '}
+              <a href="https://www.aztech.com/business/">Aztech</a>,{' '}
+              and{' '}<a href="https://www.tencent.com">Tencent</a>.
+            </p>
+            <p>
+              From January 2022, he will join Tencent as a software engineer.
             </p>
             <br/>
             <a href='http://sgis.site/CV.html'>Full-text Curriculum Vitae</a>
