@@ -24,13 +24,22 @@
       color:#854d88;
       cursor: pointer;
       padding: 1vh;
-      text-decoration:underline;
-      font-size:2vh;
-      line-height: 150%;
+      line-height: 100%;
+      transition: all 0.2s;
+      .cardName{
+        text-decoration:underline;
+        font-size:2vh;
+      }
+      .cardContent{
+        font-size:1.5vh;
+      }
     }
     .item:hover{
       color: #fff;
       background-color: #854d88;
+    }
+    .activedItem{
+      background-color: rgba(255, 255, 255, 0.2);
     }
   }
 }
