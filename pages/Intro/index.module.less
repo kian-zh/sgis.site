@@ -9,24 +9,73 @@
     /* background: linear-gradient(50deg, #305f4f, #378177 66.6%, #308d76); */
     background: linear-gradient(50deg, #94bfc9 50%, #938caa 75%, #94bfc9 0%);
     background-size: 80px 100px;
+    .page1Content{
+      text-align: left;
+      padding: 40px;
+      max-width: 1000px;
+      width: auto;
+      margin:0 auto;
+      border: solid 8px #6b4b4b;
+      background-color: rgb(235, 235, 235);
+      color: #6b4b4b;
+      .myPic{
+        width: 200px;
+        margin: 20px;
+      }
+      a{
+        white-space: nowrap;
+        color: #6b4b4b;
+        text-decoration: underline;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 1.1em;
+        font-weight: 500;
+      }
+      a:hover{
+        background-color: rgba(109, 78, 70, 0.2);
+      }
+      .imgToClick{
+        border: solid #6b4b4b 4px;
+        border-radius: 60px;
+        height: 60px;
+        margin: 10px;
+        padding: 20px;
+        transition: all 0.1s;
+        cursor: pointer;
+      }
+      .imgToClick:hover{
+        box-shadow: 0 0 10px 5px #6b4b4b;
+      }
+    }
   }
+
   .page2{
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    height: auto;
-    min-height: 60vh;
-    text-align: center;
-    background-color: #aebcc4;
-    display: block;
-  }
-  .page3{
     padding-top: 10vh;
     padding-bottom: 10vh;
     height: auto;
     min-height: 80vh;
     text-align: center;
     background: linear-gradient(50deg, #465c2e, #7d8143 66.6%, #80702a);
+    .page2Content{
+      text-align: left;
+      padding: 40px;
+      max-width: 1000px;
+      width: auto;
+      margin:0 auto;
+      border: solid 4px #d9d9d9;
+      color: #d9d9d9;
+    }
   }
+
+  .page3{
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    height: 60vh;
+    text-align: center;
+    background-color: #aebcc4;
+    display: block;
+  }
+
   .page4{
     padding-top: 10vh;
     padding-bottom: 10vh;
@@ -34,7 +83,17 @@
     min-height: 80vh;
     text-align: center;
     background: linear-gradient(50deg, #1a2e4b, #454779 66.6%, #573f72);
+    .page4Content{
+      text-align: left;
+      padding: 40px;
+      max-width: 1000px;
+      line-height: 180%;
+      width: auto;
+      margin:0 auto;
+      color: #d9d9d9;
+    }
   }
+
   .page5{
     padding-top: 10vh;
     padding-bottom: 10vh;
@@ -43,94 +102,15 @@
     text-align: center;
     background: linear-gradient(50deg, #16443a, #32693a 66.6%, #3f8119);
   }
-  .imgToClick{
-    border: solid #6b4b4b 4px;
-    border-radius: 60px;
-    height: 60px;
-    margin: 10px;
-    padding: 20px;
-    transition: all 0.1s;
-    cursor: pointer;
-  }
-  .imgToClick:hover{
-    box-shadow: 0 0 10px 5px #6b4b4b;
-  }
-  .myPic{
-    width: 200px;
-    margin: 20px;
-  }
-  .page1Content{
-    text-align: left;
-    padding: 40px;
-    max-width: 1000px;
-    width: auto;
-    margin:0 auto;
-    border: solid 8px #6b4b4b;
-    background-color: rgb(235, 235, 235);
-    color: #6b4b4b;
-    a{
-      white-space: nowrap;
-      color: #6b4b4b;
-      text-decoration: underline;
-      padding-left: 10px;
-      padding-right: 10px;
-      font-size: 1.1em;
-      font-weight: 500;
-    }
-    a:hover{
-      background-color: rgba(109, 78, 70, 0.2);
-    }
-  }
-  .page3Content{
-    text-align: left;
-    padding: 40px;
-    max-width: 1000px;
-    width: auto;
-    margin:0 auto;
-    border: solid 4px #d9d9d9;
-    color: #d9d9d9;
-  }
-  .page4Content{
-    text-align: left;
-    padding: 40px;
-    max-width: 1000px;
-    line-height: 180%;
-    width: auto;
-    margin:0 auto;
-    color: #d9d9d9;
-  }
-  .mapContainer{
-    height: 60vh;
-    width:100%;
-    position: absolute;
-  }
-  .mapCover{
-    position: absolute;
-    margin-top: 10vh;
-    height: 40vh;
-    padding-top: 5vh;
-    font-weight: 600;
-    width:30vh;
-    right: 5vh;
-    z-index: 1;
-    font-size:3vh;
-    color:#854d88;
-    background-color: rgba(200,200,200,0.8);
-    line-height: 200%;
-  }
-  .itemToClick{
-    color:#854d88;
-    cursor: pointer;
-    padding: 1vh;
-    text-decoration:underline;
-  }
-  .itemToClick:hover{
-    color: #fff;
-    background-color: #854d88;
-  }
-  .mpaCoverTitle{
-    font-size: 4vh;
-  }
+
+
+
+
+
+
+
+
+
   .popup{
     font-size: 3vh;
     line-height: 140%;
@@ -149,13 +129,14 @@
     background-color: black;
     text-align: left;
     font-size: 2vh;
+    .footerContent{
+      width: 80%;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      .footerContentPart{
+        width: 50%;
+      }
+    }
   }
-  .footerContent{
-    width: 80%;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-  }
-  .footerContentPart{
-    width: 50%;
-  }
+

@@ -5,76 +5,14 @@ import pic_linkedin from './linkedin.png'
 import pic_github from './github.png'
 import pic_zhihu from './zhihu.png'
 import pic_csdn from './csdn.png'
-import mapboxgl from 'mapbox-gl';
 import style from './index.module.less'
 import MyHead from '../../components/MyHead'
 import MapboxHead from '../../components/MapboxHead'
+import MapPage from './MapPage'
 
 class Intro extends React.Component {
   constructor() {
     super();
-    this.state = {
-      //  地图坐标
-      point: [
-        { center: {lng: 118.35564770648534, lat: 34.3628044306963}, zoom: 6 },
-        { center: {lng: 118.78499064620274, lat: 34.129301470101524}, zoom: 6 },
-        { center: {lng: 118.9545245567819, lat: 32.11425436214563}, zoom: 6 },
-        { center: {lng: 114.21065841012057, lat: 22.41858902417195}, zoom: 6 },
-      ],
-      //  地图文字
-      text: [
-        'Born in 1998, he spent his childhood in Xinyi, a small town in northern China.',
-        'From 2013 to 2016, he studied at Shuyang High School.',
-        'He came to Nanjing University in 2016 and received a bachelor`s degree in Geographic Information Science in 2020.',
-        'He will continue his studies at The Chinese University of Hongkong in 2020-2021.'
-      ],
-      //  地图对象
-      map: ()=>({}),
-      popup: ()=>({}),
-    };
-  }
-
-  //  初始化
-  componentDidMount() {
-    mapboxgl.accessToken = 'pk.eyJ1IjoiemhhbmdqaW5neXVhbjEyMzQiLCJhIjoiY2pubTIyenhnMDJnMDN2cWhzczJocjhiaSJ9.HSC6WDbo_XmKCKHsFmQdtQ';
-    
-    const map = new mapboxgl.Map({
-    container: this.mapContainer,
-    //  style: 'mapbox://styles/mapbox/streets-v11',
-    //  style: 'mapbox://styles/mapbox/navigation-preview-day-v2',
-    //  style: 'mapbox://styles/mapbox/satellite-v9',
-    style: 'mapbox://styles/zhangjingyuan1234/ckxgam6bqhc2r14pc80o95kno',
-    center: [118.35564770648534, 34.3628044306963],
-    zoom: 6,
-    scrollZoom: false,
-    });
-
-    var nav = new mapboxgl.NavigationControl();
-    map.addControl(nav, 'top-left');
-    const marker = [];
-    for(let j = 0; j < this.state.point.length; j++) {
-      const item = this.state.point[j].center;
-      marker[j] = new mapboxgl.Marker()
-      .setLngLat([item.lng, item.lat])
-      .addTo(map);
-    }
-
-    this.setState({map: map});
-  }
-
-  //  点击事件
-  clickTime(index){
-      if(!(this.state.popup.length===0))
-      { this.state.popup.remove(); }
-      this.state.map.flyTo(this.state.point[index]);
-
-      const popup = new mapboxgl.Popup({offset: 50, closeButton: false, className: style.popup})
-        .setLngLat(this.state.point[index].center)
-        .setHTML(this.state.text[index])
-        .setMaxWidth("400px")
-        .addTo(this.state.map);
-
-      this.setState({popup:popup});
   }
 
   render() {
@@ -111,9 +49,9 @@ class Intro extends React.Component {
         </div>
 
         {/*第二页*/}
-        <div className={style.page3}>
-          <div className={style.page3Content}>
-            <h2 style={{color: '#fff'}}>Biography</h2>
+        <div className={style.page2}>
+          <div className={style.page2Content}>
+            <h2>Biography</h2>
             <p>
               Jingyuan Zhang received the BSc degree in GIS from Nanjing Univeristy, and MSc degree from The Chinese Univeristy of Hong Kong.
             </p>
@@ -142,15 +80,8 @@ class Intro extends React.Component {
         </div>
 
         {/*第三页*/}
-        <div className={style.page2}>
-          <div className={style.mapCover}>
-            <span className={style.mpaCoverTitle}>TimeLine</span><br/>
-            <span className={style.itemToClick}  onClick={()=>this.clickTime(0)}>1998-2013</span><br/>
-            <span className={style.itemToClick}  onClick={()=>this.clickTime(1)}>2013-2016</span><br/>
-            <span className={style.itemToClick}  onClick={()=>this.clickTime(2)}>2016-2020</span><br/>
-            <span className={style.itemToClick}  onClick={()=>this.clickTime(3)}>2020-2021</span><br/>
-          </div>
-          <div ref={el => this.mapContainer = el} className={style.mapContainer} />
+        <div className={style.page3}>
+          <MapPage />
         </div>
 
         {/*第四页*/}
