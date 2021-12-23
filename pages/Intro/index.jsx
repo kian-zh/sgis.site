@@ -17,7 +17,7 @@ class Intro extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={style.all}>
         <MyHead />
         <MapboxHead />
         <div style={{backgroundColor:'teal', position:'fixed',top:'0px',left:'0px',right:'0px',bottom:'0px',zIndex:'-99'}}>
@@ -30,12 +30,14 @@ class Intro extends React.Component {
             <h1>Jingyuan Zhang <span style={{whiteSpace:'nowrap'}}>张景源</span></h1>
             <h2 style={{ color: 'rgba(109, 78, 70, 0.6)' }}>Front-End / GeoInfo / Cartography</h2>
             <h2>
-              <a href="https://blog.csdn.net/nju_zjy">📃Blog</a>
-              <a onClick={()=>{alert('正在建设中')}}>🌉Album</a>
-              <a href="http://sgis.site/Resources.html">🚚Downloads</a>
-              <a href="https://www.linkedin.com/in/zhang1998/">🐤Linkedin</a>
-              <a href="https://www.zhihu.com/people/sgis">🤺Zhihu</a>
-              <a href="https://github.com/kian-zh">🦑Github</a>
+              <a href="https://blog.csdn.net/nju_zjy">📃Blog</a>{' '}
+              <a onClick={()=>{alert('正在建设中')}}>🌉Album</a>{' '}
+              <a href="http://sgis.site/Resources.html">🚚Downloads</a> 
+            </h2>
+            <h2>
+              <a href="https://www.linkedin.com/in/zhang1998/">🐤Linkedin</a>{' '}
+              <a href="https://www.zhihu.com/people/sgis">🤺Zhihu</a>{' '}
+              <a href="https://github.com/kian-zh">🦑Github</a> 
             </h2>
             {/*
               <img className={style.imgToClick} alt='Pictrue of Linkedin' src={pic_linkedin} onClick={()=>{window.open("https://www.linkedin.com/in/zhang1998/")}} />
@@ -86,19 +88,21 @@ class Intro extends React.Component {
         <div className={style.page4}>
           <div className={style.page4Content}>
             <h2>Demos</h2>
-            <a href='http://sgis.site/HttpPage.html'>Axios-based HTTP request constructor</a>
+            <a href='http://sgis.site/HttpPage.html'>Axios-based HTTP Request Constructor</a>
             <br/>
-            <a href='http://sgis.site/ColorPicker.html'>Color picker using canvas</a>
+            <a href='http://sgis.site/ColorPicker.html'>Color Picker Using Canvas</a>
             <br/>
-            <a href='http://sgis.site/DecodeJson.html'>JSON data decoder</a>
+            <a href='http://sgis.site/DecodeJson.html'>JSON Data Decoder</a>
             <br/>
-            <a href='http://sgis.site/MP/index.html'>several Map Projection demos</a>
+            <a href='http://sgis.site/MP/index.html'>Several Map Projection Demos</a>
             <br/>
-            <a href='http://sgis.site/Sprite/webglDemo.html'>WebGL Demo with spriteJS</a>
+            <a href='http://sgis.site/Sprite/webglDemo.html'>WebGL Demo with SpriteJS</a>
             <br/>
-            <a href='http://sgis.site/BuildingLoader.html'>3D building Loader</a>
+            <a href='http://sgis.site/BuildingLoader.html'>3D-building Loader</a>
             <br/>
             <a href='http://sgis.site/Ruler.html'>A Ruler</a>
+            <br/>
+            <a href='http://sgis.site/Coordinate.html'>Pick Coordinate on Map</a>
           </div>
         </div>
 

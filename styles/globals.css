@@ -23,7 +23,6 @@ body {
 }
 
 a {
-  color: #fff;
   cursor: pointer;
 }
 
@@ -43,5 +42,4 @@ h2 {
   font-weight: 500;
   margin-block-start: 0.4em;
   margin-block-end: 0.4em;
-  color: #fff;
 }
