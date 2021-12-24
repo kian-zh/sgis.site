@@ -126,7 +126,7 @@ class Intro extends React.Component {
             </div>
             <div className={style.footerContentPart}>
               This page was built with React<br/>
-              and updated at 22 Dec. 2021<br/>
+              and updated at 24 Dec. 2021<br/>
               版权所有© 2021
               Jingyuan Zhang 
               All rights reserved.
