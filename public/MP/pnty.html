@@ -6,7 +6,7 @@
         .land{fill-opacity: 1;fill:#6194A7;stroke:#935d8c;stroke-width:2}
         .china{fill-opacity: 1;fill:#5f4d93;stroke:#eeeeee;stroke-width:1}
     </style>
-    <script src="Line.js"></script>
+    <script src="./loadLine.js"></script>
     <script>
         pi=3.1415926;
         a=6378245;
@@ -39,25 +39,28 @@
                 }
                 result=result+"<polyline points='"+line+"'/>";
             }
-            length=data().length;
-            Land_line=data();
-            max=length/2;
-            line="<polyline class='land' points='";
-            for(iii=1;iii<=max;iii=iii+1)
-            {
-                yy=Land_line[2*iii-1];
-                xx=Land_line[2*iii-2];
-                if(xx>-500) {
-                    line=line+Q1_get_xy(xx,yy)+' ';
-                }
-                else
+            function draw(d){
+                length=d.length;
+                Land_line=d;
+                max=length/2;
+                line="<polyline class='land' points='";
+                for(iii=1;iii<=max;iii=iii+1)
                 {
-                    line=line+"'/> <polyline class='land' points='";
+                    yy=Land_line[2*iii-1];
+                    xx=Land_line[2*iii-2];
+                    if(xx>-500) {
+                        line=line+Q1_get_xy(xx,yy)+' ';
+                    }
+                    else
+                    {
+                        line=line+"'/> <polyline class='land' points='";
+                    }
                 }
+                line=line+"'/>";
+                result=result+line;
+                document.getElementById('answer1').innerHTML=result;
             }
-            line=line+"'/>";
-            result=result+line;
-            document.getElementById('answer1').innerHTML=result;
+            data(draw)
         }
         function Q1_get_xy(xx,yy)
         {
@@ -110,26 +113,29 @@
         }
         function Q2()
         {
-            result='';
-            length=cdata().length;
-            C_line=cdata();
-            max=length/2;
-            line="<polyline class='china' points='";
-            for(iii=1;iii<=max;iii=iii+1)
-            {
-                yy=C_line[2*iii-1];
-                xx=C_line[2*iii-2];
-                if(xx>-500) {
-                    line=line+Q2_get_xy(xx,yy)+' ';
-                }
-                else
+            function draw(d){
+                result='';
+                length=d.length;
+                C_line=d;
+                max=length/2;
+                line="<polyline class='china' points='";
+                for(iii=1;iii<=max;iii=iii+1)
                 {
-                    line=line+"'/> <polyline class='china' points='";
+                    yy=C_line[2*iii-1];
+                    xx=C_line[2*iii-2];
+                    if(xx>-500) {
+                        line=line+Q2_get_xy(xx,yy)+' ';
+                    }
+                    else
+                    {
+                        line=line+"'/> <polyline class='china' points='";
+                    }
                 }
+                line=line+"'/>";
+                result=result+line;
+                document.getElementById('answer2').innerHTML=result;
             }
-            line=line+"'/>";
-            result=result+line;
-            document.getElementById('answer2').innerHTML=result;
+            cdata(draw)
         }
     </script>
 </head>

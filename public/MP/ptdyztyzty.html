@@ -1,12 +1,12 @@
 <html>
 <meta charset="utf-8">
 <head>
-    <script src="Line.js"></script>
     <style>
         polyline{fill-opacity: 0;stroke:#a89cc8;stroke-width:1}
         .land{fill-opacity: 1;fill:#636363;stroke:#eeeeee;stroke-width:0.5}
         .china{fill-opacity: 1;fill:#5f4d93;stroke:#eeeeee;stroke-width:1}
     </style>
+    <script src="./loadLine.js"></script>
     <script>
         pi=3.1415926;
         a=6378245;
@@ -47,26 +47,29 @@
                 }
                 result=result+"<polyline points='"+line+"'/>";
             }
-            length=data().length;
-            Line=data();
-            max=length/2;
-            line="<polyline class='land' points='";
-            for(iii=1;iii<=max;iii=iii+1)
-            {
-                yy=Line[2*iii-1];
-                xx=Line[2*iii-2];
-                if(xx>-500) {
-                    line=line+Q1_get_xy(xx,yy)+' ';
-                }
-                else
+            function draw(d){
+                length = d.length
+                Line = d
+                max=length/2;
+                line="<polyline class='land' points='";
+                for(iii=1;iii<=max;iii=iii+1)
                 {
-                    line=line+"'/> <polyline class='land' points='";
+                    yy=Line[2*iii-1];
+                    xx=Line[2*iii-2];
+                    if(xx>-500) {
+                        line=line+Q1_get_xy(xx,yy)+' ';
+                    }
+                    else
+                    {
+                        line=line+"'/> <polyline class='land' points='";
+                    }
                 }
+                line=line+"'/>";
+                result=result+line;
+                document.getElementById('answer1').innerHTML=result;
             }
-            line=line+"'/>";
-            result=result+line;
-            document.getElementById('answer1').innerHTML=result;
-
+            data(draw);
+            
         }
         function Q1_get_xy(xx,yy)
         {
@@ -170,28 +173,31 @@
                 }
                 result=result+"<polyline><animate attributeType='XML' attributeName='points' from='" +line+"' to='"+line_n+"'dur='10s' repeatCount='indefinite'></animate></polyline>";
             }
-            length=cdata().length;
-            Line=cdata();
-            max=length/2;
-            line='';
-            line_n='';
-            for(iii=1;iii<=max;iii=iii+1)
-            {
-                yy=Line[2*iii-1];
-                xx=Line[2*iii-2];
-                if(xx>-500) {
-                    line = line + get_Q3_xy(xx,yy,Sigma,Lambada0,K,Rho_sta)[0] + ' ';
-                    line_n = line_n + get_Q3_xy(xx,yy,Sigma,Lambada0,K,Rho_sta)[1] + ' ';
-                }
-                else
+            function draw(d){
+                length=d.length;
+                Line=d;
+                max=length/2;
+                line='';
+                line_n='';
+                for(iii=1;iii<=max;iii=iii+1)
                 {
-                    result=result+"<polyline class='china'><animate attributeType='XML' attributeName='points' from='" +line+"' to='"+line_n+"'dur='10s' repeatCount='indefinite'></animate></polyline>";
-                    line="";
-                    line_n="";
+                    yy=Line[2*iii-1];
+                    xx=Line[2*iii-2];
+                    if(xx>-500) {
+                        line = line + get_Q3_xy(xx,yy,Sigma,Lambada0,K,Rho_sta)[0] + ' ';
+                        line_n = line_n + get_Q3_xy(xx,yy,Sigma,Lambada0,K,Rho_sta)[1] + ' ';
+                    }
+                    else
+                    {
+                        result=result+"<polyline class='china'><animate attributeType='XML' attributeName='points' from='" +line+"' to='"+line_n+"'dur='10s' repeatCount='indefinite'></animate></polyline>";
+                        line="";
+                        line_n="";
+                    }
                 }
+                result=result+"<polyline class='china'><animate attributeType='XML' attributeName='points' from='" +line+"' to='"+line_n+"'dur='10s' repeatCount='indefinite'></animate></polyline>";
+                document.getElementById('answer3').innerHTML=result;
             }
-            result=result+"<polyline class='china'><animate attributeType='XML' attributeName='points' from='" +line+"' to='"+line_n+"'dur='10s' repeatCount='indefinite'></animate></polyline>";
-            document.getElementById('answer3').innerHTML=result;
+            cdata(draw)
         }
         function get_Q3_xy(xx,yy,Sigma,Lambada0,K,Rho_sta)
         {
