@@ -1,10 +1,6 @@
 import React from 'react'
 //  import pic_me from './me.png'
 import pic_me from './me2.jpg'
-import pic_linkedin from './linkedin.png'
-import pic_github from './github.png'
-import pic_zhihu from './zhihu.png'
-import pic_csdn from './csdn.png'
 import style from './index.module.less'
 import MyHead from '../../components/MyHead'
 import MapboxHead from '../../components/MapboxHead'
@@ -39,12 +35,6 @@ class Intro extends React.Component {
               <a href="https://www.zhihu.com/people/sgis">🤺Zhihu</a>{' '}
               <a href="https://github.com/kian-zh">🦑Github</a> 
             </h2>
-            {/*
-              <img className={style.imgToClick} alt='Pictrue of Linkedin' src={pic_linkedin} onClick={()=>{window.open("https://www.linkedin.com/in/zhang1998/")}} />
-              <img className={style.imgToClick} alt='Pictrue of Zhihu' src={pic_zhihu} onClick={()=>{window.open("https://www.zhihu.com/people/sgis")}} />
-              <img className={style.imgToClick} alt='Pictrue of CSDN' src={pic_csdn} onClick={()=>{window.open("https://blog.csdn.net/nju_zjy")}} />
-              <img className={style.imgToClick} alt='Pictrue of Github' src={pic_github} onClick={()=>{window.open("https://github.com/kian-zh")}} />
-            */}
             </div>
         </div>
 
@@ -68,7 +58,7 @@ class Intro extends React.Component {
               and{' '}<a href="https://www.tencent.com">Tencent</a>.
             </p>
             <p>
-              From January 2022, he will join Tencent as a software engineer.
+              From January 2022, he works at Tencent as a software engineer.
             </p>
             <br/>
             <a href='http://sgis.site/CV.html'>Full-text Curriculum Vitae</a>
@@ -126,7 +116,7 @@ class Intro extends React.Component {
             </div>
             <div className={style.footerContentPart}>
               This page was built with React<br/>
-              and updated at 24 Dec. 2021<br/>
+              and updated at 16 Oct. 2021<br/>
               版权所有© 2021
               Jingyuan Zhang 
               All rights reserved.
@@ -134,7 +124,7 @@ class Intro extends React.Component {
               <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
               <span id="busuanzi_container_site_pv">本页面总访问量<span id="busuanzi_value_site_pv"></span>次</span>
               <br/>
-              苏ICP备18026842号-2
+              ICP 证 <a style={{'color':'rgb(200, 200, 200)'}} href="https://beian.miit.gov.cn">苏ICP备18026842号-2</a>
             </div>
           </div>
         </div>

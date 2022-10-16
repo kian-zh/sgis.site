@@ -53,7 +53,7 @@ class MapPage extends React.Component {
             center: {lng:121.39472746305773, lat:31.160745569622932},
             zoom: 8,
           },
-          text: 'From January 2022, he will join Tencent, Shanghai as a software engineer.'
+          text: 'From January 2022, he works at Tencent as a software engineer'
         }
       ],
       chosenCityIndex: 0,
