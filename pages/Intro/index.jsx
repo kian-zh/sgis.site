@@ -93,6 +93,8 @@ class Intro extends React.Component {
             <a href='http://sgis.site/Ruler.html'>A Ruler</a>
             <br/>
             <a href='http://sgis.site/Coordinate.html'>Pick Coordinate on Map</a>
+            <br/>
+            <a href='./MetroGame'>Metro Drawing Game</a>
           </div>
         </div>
 

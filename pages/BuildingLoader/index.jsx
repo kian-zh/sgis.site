@@ -12,7 +12,6 @@ import Button from '@material-ui/core/Button';
 
 import ListView from '../../components/BuildingLoader/ListView'
 import DialogView from '../../components/BuildingLoader/DialogView'
-import { clearPrewarmedResources } from 'mapbox-gl';
 import MapboxHead from '../../components/MapboxHead'
 
 mapboxgl.workerClass = MapboxWorker;
