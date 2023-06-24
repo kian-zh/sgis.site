@@ -109,15 +109,17 @@ class Intro extends React.Component {
                 <br/>
                 <a style={{'color':'rgb(200, 200, 200)'}} href='https://github.com/HanwGeek'>Han Wang</a> in Spatial-Temporal Analysis
                 <br/>
-                <a style={{'color':'rgb(200, 200, 200)'}} href='https://web.hku.hk/~xuxue/'>Xu Xue</a> in Programming Language
+                <a style={{'color':'rgb(200, 200, 200)'}} href='https://types.hk/'>Xu Xue</a> in Programming Language
                 <br/>
                 <a style={{'color':'rgb(200, 200, 200)'}} href='http://yutingwu816.gitee.io/personal-website/'>Yuting Wu</a> in Front-end development
+                <br/>
+                <a style={{'color':'rgb(200, 200, 200)'}} href='https://gisphere.info/'>GISphere</a>: A GIS Open Organization
               </div>
             </div>
             <div className={style.footerContentPart}>
               This page was built with React<br/>
-              and updated at 16 Oct. 2021<br/>
-              版权所有© 2021
+              and updated at 24 Jun. 2023<br/>
+              版权所有© 2023
               Jingyuan Zhang 
               All rights reserved.
               <br/>
