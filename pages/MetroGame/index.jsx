@@ -5,6 +5,7 @@ import MapboxHead from '../../components/MapboxHead'
 import MapDrawingView from './views/MapDrawing'
 import ModifyingView from './views/Modifying'
 import ExportingView from './views/Exporting'
+import SideBar from './components/SideBar'
 
 function MainView () {
 	const [view, setView] = useState('MapDrawing');
@@ -38,9 +39,14 @@ export default function MetroGame () {
 			</Head>
 			<MapboxHead />
 			<div className={style.title}>
-				Click the Map to Pick Coordinate! 点击地图来拾取坐标!
+				绘制铁路/地铁线
 			</div>
-			<MainView />
+			<div className={style.main}>
+				<div className={style.mainView}>
+					<MainView />
+				</div>
+				<SideBar />
+			</div>
 		</div>
     )
 }
