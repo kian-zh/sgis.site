@@ -19,7 +19,16 @@ function MainView () {
 	}
 }
 
+function dataBusFunc() {
+	const [lineData, setLineData] = useState([1,2,3,4,5,6,7]);
+	const [currentLineId, setCurrentLineId] = useState('');
+	return {
+		lineData, currentLineId, setLineData, setCurrentLineId
+	}
+}
+
 export default function MetroGame () {
+	const dataBus = new dataBusFunc();
 	return (
 		<div className={style.container}>
 			<Head>
@@ -45,7 +54,7 @@ export default function MetroGame () {
 				<div className={style.mainView}>
 					<MainView />
 				</div>
-				<SideBar />
+				<SideBar dataBus={dataBus} />
 			</div>
 		</div>
     )
