@@ -6,6 +6,7 @@ export default function SideBar (props) {
   const listItemDiv = (item, index) => (
     <div key={index}>
       initial 时间
+      <Button size="small" variant="contained" disableElevation onClick={()=>{mutate(item.id)}}>编辑</Button>
     </div>
   );
 
@@ -16,8 +17,12 @@ export default function SideBar (props) {
   return (
     <div className={style.bar}>
       侧边栏
-      <Button size="small" variant="contained" color="primary" disableElevation onClick={()=>{mutate()}}>新建线路</Button>
       { props.dataBus.lineData.map(listItemDiv) }
+      <div>正在编辑</div>
+      <Button size="small" variant="contained" color="primary" disableElevation onClick={()=>{mutate()}}>新建线路</Button>
+      <div>
+        test
+      </div>
     </div>
   );
 }

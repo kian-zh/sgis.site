@@ -7,15 +7,15 @@ import ModifyingView from './views/Modifying'
 import ExportingView from './views/Exporting'
 import SideBar from './components/SideBar'
 
-function MainView () {
+function MainView (props) {
 	const [view, setView] = useState('MapDrawing');
 	switch(view){
 		case 'MapDrawing':
-			return (<MapDrawingView />)
+			return (<MapDrawingView dataBus={props.dataBus} />)
 		case 'Modifying':
-			return (<ModifyingView />)
+			return (<ModifyingView dataBus={props.dataBus} />)
 		case 'Exporting':
-			return (<ExportingView />)
+			return (<ExportingView dataBus={props.dataBus} />)
 	}
 }
 
@@ -38,13 +38,13 @@ export default function MetroGame () {
 				<meta name="theme-color" content="#000000" />
 				<meta
 					name="description"
-					content="绘制铁路线"
+					content="绘制铁路/地铁线"
 				/>
 				<meta
 					name="keywords"
 					content="游戏, 地图, 铁路, 地铁"
 				/>
-				<title>绘制铁路线</title>
+				<title>绘制铁路/地铁线</title>
 			</Head>
 			<MapboxHead />
 			<div className={style.title}>
@@ -52,7 +52,7 @@ export default function MetroGame () {
 			</div>
 			<div className={style.main}>
 				<div className={style.mainView}>
-					<MainView />
+					<MainView dataBus={dataBus} />
 				</div>
 				<SideBar dataBus={dataBus} />
 			</div>

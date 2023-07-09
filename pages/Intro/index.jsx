@@ -27,7 +27,7 @@ class Intro extends React.Component {
             <h2 style={{ color: 'rgba(109, 78, 70, 0.6)' }}>Front-End / GeoInfo / Cartography</h2>
             <h2>
               <a href="https://blog.csdn.net/nju_zjy">📃Blog</a>{' '}
-              <a onClick={()=>{alert('正在建设中')}}>🌉Album</a>{' '}
+              <a href="http://sgis.site/Album.html">🌉Album</a>{' '}
               <a href="http://sgis.site/Resources.html">🚚Downloads</a> 
             </h2>
             <h2>
@@ -115,7 +115,7 @@ class Intro extends React.Component {
                 <br/>
                 <a style={{'color':'rgb(200, 200, 200)'}} href='http://yutingwu816.gitee.io/personal-website/'>Yuting Wu</a> in Front-end development
                 <br/>
-                <a style={{'color':'rgb(200, 200, 200)'}} href='https://gisphere.info/'>GISphere</a>: A GIS Open Organization
+                <a style={{'color':'rgb(200, 200, 200)'}} href='https://gisphere.info/'>GISphere</a>: An Open GIS Organization
               </div>
             </div>
             <div className={style.footerContentPart}>
