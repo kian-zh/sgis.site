@@ -17,7 +17,7 @@ export default function SideBar (props) {
   return (
     <div className={style.bar}>
       侧边栏
-      { props.dataBus.lineData.map(listItemDiv) }
+      { props?.dataBus?.lineData?.map(listItemDiv) }
       <div>正在编辑</div>
       <Button size="small" variant="contained" color="primary" disableElevation onClick={()=>{mutate()}}>新建线路</Button>
       <div>
