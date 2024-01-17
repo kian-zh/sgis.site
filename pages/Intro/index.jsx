@@ -1,6 +1,6 @@
 import React from 'react'
 //  import pic_me from './me.png'
-import pic_me from './me2.jpg'
+import pic_me from './me3.jpg'
 import style from './index.module.less'
 import MyHead from '../../components/MyHead'
 import MapboxHead from '../../components/MapboxHead'
