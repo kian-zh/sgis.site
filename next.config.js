@@ -1,11 +1,13 @@
 const withPlugins = require('next-compose-plugins');
-const less = require("@zeit/next-less")
-const css = require("@zeit/next-css")
+const withLess = require("next-with-less");
 
 const nextConfig = {
+  images: {
+    disableStaticImages: true,
+  },
   webpack: function (config) {
   config.module.rules.push({
-    test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
+    test: /\.(eot|woff|woff2|ttf|svg|png|jpg|jpeg|gif)$/,
     use: {
     loader: 'url-loader',
       options: {
@@ -17,12 +19,8 @@ const nextConfig = {
   return config
   }
 }
-
-module.exports = withPlugins([
-  [css, {
-     cssModules: true
-   }],
-  [less, {
-     cssModules: true
-   }]
-], nextConfig);
+module.exports = withPlugins([[withLess, {
+  lessLoaderOptions: {
+    /* ... */
+  },
+}],], nextConfig);
