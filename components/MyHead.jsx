@@ -15,6 +15,7 @@ const MyHead = () => (
             content="Jingyuan, Zhang, 张景源, Homepage, GIS, Front-end, developer"
         />
         <title>Jingyuan Zhang</title>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3183132074495367" crossorigin="anonymous"></script>
     </Head>
 )
 
