@@ -10,10 +10,10 @@ class HttpPage extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(()=>{location.href=this.state.URL},1000)
+    setTimeout(() => { location.href = this.state.URL }, 1000)
   }
 
-  render() { 
+  render() {
     return (
       <div className={style.background}>
         <div className={style.profileMainLoader}>
