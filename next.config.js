@@ -2,6 +2,7 @@ const withPlugins = require('next-compose-plugins');
 const withLess = require("next-with-less");
 
 const nextConfig = {
+  output: "export",
   images: {
     disableStaticImages: true,
   },

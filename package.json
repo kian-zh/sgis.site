@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "SET NODE_OPTIONS=--openssl-legacy-provider && next dev",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && next build && next export",
-    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && next start"
+  "//dev": "SET NODE_OPTIONS=--openssl-legacy-provider && next dev",
+  "//build": "SET NODE_OPTIONS=--openssl-legacy-provider && next build && next export",
+  "//start": "SET NODE_OPTIONS=--openssl-legacy-provider && next start",
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start"
   },
   "dependencies": {
     "@babel/core": "^7.14.2",
@@ -19,6 +22,7 @@
     "axios": "^0.21.1",
     "file-loader": "^6.2.0",
     "less": "^4.1.1",
+    "lodash": "^4.17.21",
     "mapbox-gl": "^2.15.0",
     "marked": "^2.0.5",
     "material-ui": "^0.20.2",
