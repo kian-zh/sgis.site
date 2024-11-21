@@ -27,7 +27,11 @@ export default function MetroGame() {
       console.log(contents);
       const list = contents.map((c) => {
         const name = c.Key._text.split('/').pop().split('.')[0]
-        return { name: name, url: 'https://sgis-1254220474.cos.ap-hongkong.myqcloud.com/' + c.Key._text }
+        return {
+          name: name,
+          url: 'https://sgis-1254220474.cos.ap-hongkong.myqcloud.com/' + c.Key._text,
+          previewUrl: 'https://sgis-1254220474.cos.ap-hongkong.myqcloud.com/' + c.Key._text + '?imageMogr2/thumbnail/x200'
+        }
       })
       const orderList = list.sort((a, b) => (Number(b.name.split('-')[0]) - Number(a.name.split('-')[0])))
       setList(() => (orderList));
@@ -46,7 +50,7 @@ export default function MetroGame() {
   const List = () => {
     return list.slice(10 * (pageIndex - 1), 10 * pageIndex).map((l) => {
       const tooltip = (<React.Fragment>
-        <img src={l.url} className={style.img}></img>
+        <img src={l.previewUrl} className={style.img}></img>
       </React.Fragment>
       )
       return (<div key={l.url}>
